@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%% Tipo de documento %%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,aspectratio=169]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% Configuración de paquetes %%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{url}
+\usepackage{xcolor-material}
+\usepackage[type={CC}, modifier={by-nc}, version={4.0}]{doclicense}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% Información del documento %%%%%%%%%%%%%%%%%%
+\title[Proyecto final]{Proyecto final de Ingeniería Mecatrónica}
+\subtitle{Sistema de control para planta de tratamiento de efluentes}
+\author[Gianluca \& Gabriel]{Gianluca Lovatto y Gabriel Aguirre}
+\date{\today}
+\titlegraphic{\includegraphics[scale=0.18]{img/logo.png}}
+\institute[UNER FCAL]{Facultad de Ciencias de la Alimentación}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Configuración de diapositivas %%%%%%%%%%%%%%%%%
+\usetheme{Madrid}
+\usecolortheme{default}
+\usefonttheme{default}
+\useinnertheme{default}
+\useoutertheme{default}
+
+\setbeamercovered{invisible}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{background canvas}{bg=MaterialGrey50}
+\setbeamercolor{palette primary}{fg=MaterialGrey50,bg=MaterialIndigo700}
+\setbeamercolor{palette secondary}{fg=MaterialGrey50}
+\setbeamercolor{palette tertiary}{fg=MaterialGrey50}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% Inicio del documento %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}{Filmina}
+    \lipsum[1]
+\end{frame}
+
+\begin{frame}[plain]
+    \lipsum[2]
+\end{frame}
+
+{
+    \setbeamercolor{background canvas}{bg=MaterialIndigo700}
+
+    \begin{frame}{Fondo}
+        \begin{center}
+            \textcolor{MaterialGrey50}
+            {
+                \lipsum[3]
+            }
+        \end{center}
+    \end{frame}
+}
+
+{
+    \setbeamercolor{background canvas}{bg=MaterialIndigo700}
+
+    \begin{frame}[plain]
+        \begin{center}
+            \textcolor{MaterialGrey50}{\textbf
+            {
+                RESALTADO!!
+            }}
+        \end{center}
+    \end{frame}
+}
+
+% Referencias
+\begin{frame}{Referencias}
+    \begin{thebibliography}{10}
+        \beamertemplatearticlebibitems
+        \bibitem{Author1990}
+            Kung Ching Chang
+            \newblock{\em Infinite Dimensional Morse Theory and Multiple Solution Problems}.
+            \newblock{Vol. 6. Progres in nonlinear Diferential Equation and Their Aplications. Boston, Birkhauser, 1991.}
+        
+        \beamertemplatebookbibitems
+        \bibitem{Author19901}
+            Kanischka Perera.
+            \newblock{\em Nontrivial groups in p-Laplacian problems via the Yang index}.
+            \newblock{The \LaTeX\ Companion. In Topol. Methodos Nolinear Anal. 21.2 (2003) , pp 301-303}
+        
+        \beamertemplateonlinebibitems
+        \bibitem{Author2019}
+            Aprendiendo \LaTeX
+            \newblock{\em Página de Facebook}.
+            \newblock{Manuel Merino}
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}{Licencia}
+    \doclicenseThis
+\end{frame}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
