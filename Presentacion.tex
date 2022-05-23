@@ -1,11 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%% Tipo de documento %%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169]{beamer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% Configuración de paquetes %%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[spanish,es-tabla]{babel}
+\usepackage[type={CC},modifier={by-nc},version={4.0}]{doclicense}
+\usepackage[hypcap=true]{caption}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -14,9 +15,26 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{subfigure}
+\usepackage{array}
 \usepackage{url}
 \usepackage{xcolor-material}
-\usepackage[type={CC}, modifier={by-nc}, version={4.0}]{doclicense}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{xargs}
+\usepackage{parskip}
+\usepackage{charter}
+\usepackage{svg}
+\usepackage{pgfpages}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{multimedia}
+%\usepackage{animate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Selección de fuente %%%%%%%%%%%%%%%%%%%%
+\renewcommand*\familydefault{bch}
+\fontfamily{\familydefault}\selectfont
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%% Información del documento %%%%%%%%%%%%%%%%%%
@@ -24,24 +42,73 @@
 \subtitle{Sistema de control para planta de tratamiento de efluentes}
 \author[Gianluca \& Gabriel]{Gianluca Lovatto y Gabriel Aguirre}
 \date{\today}
-\titlegraphic{\includegraphics[scale=0.18]{img/logo.png}}
-\institute[UNER FCAL]{Facultad de Ciencias de la Alimentación}
+\titlegraphic{\includesvg[inkscapelatex=false,scale=0.18]{src/imagenes/doc/logo}}
+\institute[FCAL UNER]{Facultad de Ciencias de la Alimentación}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%% Configuración de diapositivas %%%%%%%%%%%%%%%%%
 \usetheme{Madrid}
-\usecolortheme{default}
-\usefonttheme{default}
-\useinnertheme{default}
-\useoutertheme{default}
 
 \setbeamercovered{invisible}
+
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{note page}{\pagecolor{MaterialGrey50}\insertnote}
 
 \setbeamercolor{background canvas}{bg=MaterialGrey50}
 \setbeamercolor{palette primary}{fg=MaterialGrey50,bg=MaterialIndigo700}
 \setbeamercolor{palette secondary}{fg=MaterialGrey50}
 \setbeamercolor{palette tertiary}{fg=MaterialGrey50}
+
+% Comentar esta linea si no se desean notas en la presentación
+%\setbeameroption{show notes on second screen=right}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%% Tipos de filminas %%%%%%%%%%%%%%%%%%%%%
+% Filmina de título
+%\begin{frame}
+%    \maketitle
+%\end{frame}
+
+% Filmina de sección
+%{
+%    \setbeamercolor{background canvas}{bg=MaterialIndigo700}
+%
+%    \begin{frame}[plain]
+%        \begin{center}
+%            \textcolor{MaterialGrey50}{\textbf{\Huge
+%            {
+%                INTRODUCCIÓN
+%            }}}
+%        \end{center}
+%    \end{frame}
+%}
+
+% Filmina común
+%\begin{frame}{Título de la filmina}
+%    \begin{center}
+%    \end{center}
+%\end{frame}
+
+% Filmina plana
+%\begin{frame}[plain]
+%    \begin{center}
+%        \movie[showcontrols]{\includegraphics[scale=0.25]{Prototipo.png}}{Prototipo.mp4}
+%    \end{center}
+%\end{frame}
+
+% Filmina común con fondo de color
+%{
+%    \setbeamercolor{background canvas}{bg=MaterialIndigo700}
+%
+%    \begin{frame}[plain]{Título de la filmina}
+%        \begin{center}
+%            \textcolor{MaterialGrey50}{\textbf{\Huge
+%            {
+%                Texto para resaltar
+%            }}}
+%        \end{center}
+%    \end{frame}
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%% Inicio del documento %%%%%%%%%%%%%%%%%%%%
@@ -51,22 +118,37 @@
     \maketitle
 \end{frame}
 
-\begin{frame}{Filmina}
-    \lipsum[1]
+{
+    \setbeamercolor{background canvas}{bg=MaterialIndigo700}
+
+    \begin{frame}[plain]
+        \begin{center}
+            \textcolor{MaterialGrey50}{\textbf{\Huge
+            {
+                INTRODUCCIÓN
+            }}}
+        \end{center}
+    \end{frame}
+}
+
+\begin{frame}{Procesos optimizados e industria moderna}
+    \begin{center}
+    \end{center}
 \end{frame}
 
 \begin{frame}[plain]
-    \lipsum[2]
+    \begin{center}
+    \end{center}
 \end{frame}
 
 {
     \setbeamercolor{background canvas}{bg=MaterialIndigo700}
 
-    \begin{frame}{Fondo}
+    \begin{frame}[plain]{Conclusiones}
         \begin{center}
             \textcolor{MaterialGrey50}
             {
-                \lipsum[3]
+                \textit{"La promesa definitiva de la tecnología es volvernos los maestros de un mundo que podemos controlar presionando un botón".} Volker Grassmuck
             }
         \end{center}
     \end{frame}
@@ -77,10 +159,10 @@
 
     \begin{frame}[plain]
         \begin{center}
-            \textcolor{MaterialGrey50}{\textbf
+            \textcolor{MaterialGrey50}{\textbf{\Huge
             {
-                RESALTADO!!
-            }}
+                !`MUCHAS GRACIAS!
+            }}}
         \end{center}
     \end{frame}
 }
@@ -89,22 +171,21 @@
 \begin{frame}{Referencias}
     \begin{thebibliography}{10}
         \beamertemplatearticlebibitems
-        \bibitem{Author1990}
-            Kung Ching Chang
-            \newblock{\em Infinite Dimensional Morse Theory and Multiple Solution Problems}.
-            \newblock{Vol. 6. Progres in nonlinear Diferential Equation and Their Aplications. Boston, Birkhauser, 1991.}
+        \bibitem{CPCOD}
+            El impacto de la Industria 4.0 en Argentina
+            \newblock{\em Paesano Facundo y Fratini Joaquin}
+            \newblock{Escuela de Economía y Negocios. Universidad Nacional de San Martín}
         
         \beamertemplatebookbibitems
-        \bibitem{Author19901}
-            Kanischka Perera.
-            \newblock{\em Nontrivial groups in p-Laplacian problems via the Yang index}.
-            \newblock{The \LaTeX\ Companion. In Topol. Methodos Nolinear Anal. 21.2 (2003) , pp 301-303}
+        \bibitem{MTTBTAR}
+            Manual técnico sobre tecnologías biológicas aerobias aplicadas al tratamiento de aguas residuales industriales
+            \newblock{\em Dr. Germán Buitrón Méndez, Dr. Germán Buitrón Méndez y Dr. Julián Carrera Muyo}
+            \newblock{Red de Tratamiento y reciclaje de aguas industriales mediante soluciones sostenibles fundamentadas en procesos biológicos}
         
         \beamertemplateonlinebibitems
-        \bibitem{Author2019}
-            Aprendiendo \LaTeX
-            \newblock{\em Página de Facebook}.
-            \newblock{Manuel Merino}
+        \bibitem{SVGREPO}
+            Iconos SVG utilizados en la presentación
+            \newblock{\em \href{https://www.svgrepo.com/}{https://www.svgrepo.com/}}
     \end{thebibliography}
 \end{frame}
 
